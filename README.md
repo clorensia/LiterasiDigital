@@ -78,7 +78,6 @@ digital-literacy-website/
 ├── style.css           # CSS styles
 ├── script.js           # JavaScript functionality
 ├── README.md           # Project documentation
-└── assets/             # Images and icons (if used)
 ```
 
 ## How to Use
