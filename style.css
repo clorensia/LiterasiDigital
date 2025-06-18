@@ -1,0 +1,577 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Variabel Warna */
+:root {
+    --primary: #4361ee;
+    --secondary: #3f37c9;
+    --accent: #f72585;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --success: #4cc9f0;
+    --warning: #fca311;
+    --error-message-color: #e74c3c;
+}
+
+/* Pengaturan Dasar Body */
+body {
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Menerapkan smooth scrolling secara universal */
+}
+
+/* Penyesuaian Scroll untuk Navigasi Jangkar */
+/* Properti scroll-margin-top akan menambahkan ruang di atas elemen section
+   saat browser menggulir ke ID tersebut, mencegahnya tertutup oleh sticky navbar.
+   Nilai diatur berbeda untuk #statistik untuk mengatasi overlapping. */
+#home,
+#tentang,
+#form,
+#tips {
+    scroll-margin-top: 90px; /* Nilai standar untuk section lain di desktop */
+}
+
+#statistik {
+    scroll-margin-top: 120px; /* Nilai lebih besar khusus untuk #statistik di desktop */
+}
+
+/* Navbar */
+nav {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(67, 97, 238, 0.9), rgba(63, 55, 201, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1950') center/cover;
+    color: white;
+    text-align: center;
+    padding: 6rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent);
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Description Section */
+.description-section {
+    padding: 5rem 5%;
+    background-color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.description-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.description-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.description-image img:hover {
+    transform: scale(1.05);
+}
+
+.description-content {
+    flex: 1;
+}
+
+.section-title {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 70px;
+    height: 4px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+#description {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+#link {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+#link:hover {
+    color: var(--accent);
+    border-bottom-color: var(--primary);
+}
+
+/* Statistics Section */
+.stats-section {
+    background: linear-gradient(135deg, #4cc9f0, #4361ee);
+    color: white;
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.stat-item {
+    padding: 2rem;
+    flex-basis: 30%;
+    min-width: 250px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Form Section */
+.form-section {
+    padding: 5rem 5%;
+    background-color: #f0f4f8;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.form-container .section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 10px;
+}
+
+.form-container .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+}
+
+/* Mengelompokkan input umum untuk konsistensi */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.8rem; /* Memberi jarak antar input */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.25);
+    outline: none;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    margin: 2.5rem 0;
+    gap: 12px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: var(--primary);
+}
+
+/* Mengatur label yang terkait dengan checkbox */
+.checkbox-group label {
+    font-weight: 500;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+    display: inline;
+}
+
+#warning {
+    color: var(--error-message-color);
+    font-weight: 600;
+    margin: 1.5rem 0 0;
+    text-align: center;
+    font-size: 1.05rem;
+    min-height: 24px;
+}
+
+#submit-form {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 1.1rem 2.5rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#submit-form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Tips Section */
+.tips-section {
+    padding: 5rem 5%;
+    background-color: white;
+}
+
+.tips-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tip-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.tip-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tip-icon {
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--dark), #1a1a1a);
+    color: white;
+    padding: 4rem 5% 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.footer-col h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 3rem;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .navbar-container {
+        justify-content: center;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .form-container, .tips-container, .footer-container {
+        padding: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Penyesuaian scroll-margin-top untuk ukuran tablet/mobile */
+    #home,
+    #tentang,
+    #form,
+    #tips {
+        scroll-margin-top: 80px; /* Nilai ini mungkin lebih cocok untuk mobile/tablet jika navbar lebih kecil */
+    }
+
+    #statistik {
+        scroll-margin-top: 100px; /* Nilai yang lebih besar untuk #statistik di mobile/tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    .stat-text {
+        font-size: 1rem;
+    }
+    .form-container {
+        padding: 1.5rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+    #submit-form {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
